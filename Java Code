@@ -1,0 +1,45 @@
+// Main.java
+
+// The Class: This is just the blueprint/template. 
+// It tells the computer what variables a "Book" should have, but doesn't hold data yet.
+class Book {
+    public String title;
+    public String author;
+    public double price;
+
+    // Constructor to set up the variables when we make a new Book object
+    public Book(String t, String a, double p) {
+        title = t;
+        author = a;
+        price = p;
+    }
+
+    // Method to print out the book info
+    public String getDetails() {
+        return "Title: " + title + " | Author: " + author + " | Price: $" + price;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("--- Creating Objects From The Class Blueprint ---");
+
+        // The Objects: These are the actual, real things made from the Book class template.
+        // Each one gets its own spot in the computer's memory and holds its own unique data.
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 10.99);
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", 14.95);
+        Book book3 = new Book("1984", "George Orwell", 8.99);
+
+        // Making an array to hold our objects
+        Book[] library = new Book[3];
+        library[0] = book1;
+        library[1] = book2;
+        library[2] = book3;
+
+        // Printing the data to prove the objects exist independently
+        System.out.println("\n--- Printing Object Data ---");
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Book " + (i + 1) + " -> " + library[i].getDetails());
+        }
+    }
+}
